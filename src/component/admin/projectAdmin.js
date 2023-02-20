@@ -15,7 +15,7 @@ const projectAdmin = () => {
             </a>
           </div>
           <div class="function__item">
-            <a href="#" class="function__item--link">
+            <a href="/admin/projects" class="function__item--link">
               <div class="function__img--box">
                 <img class="function__box" src="./assets/imgs/projects-removebg-preview.png" alt="">
               </div>

@@ -1,12 +1,12 @@
 import { router, useEffect } from "@/lib";
 import axios from "axios";
-// import { projects } from "../../data";
-const ProjectAdd = () => {
-  // const projects = JSON.parse(localStorage.getItem("projects")) || [];
+import { useState } from "../../../lib";
 
+const addProjectCategory = () => {
   useEffect(() => {
     const form = document.querySelector("#form-add");
     const nameProject = document.querySelector("#name");
+    const des = document.querySelector("#description");
     const image = document.querySelector("#image");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -14,6 +14,7 @@ const ProjectAdd = () => {
       // console.log(image.files);
       const formData = {
         name: nameProject.value,
+        description: des.value,
         image: urls,
       };
       // projects.push({
@@ -22,7 +23,7 @@ const ProjectAdd = () => {
 
       // });
       // localStorage.setItem("projects", JSON.stringify(projects));
-      fetch(`http://localhost:3000/categories`, {
+      fetch(`http://localhost:3000/projects`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +31,7 @@ const ProjectAdd = () => {
         body: JSON.stringify(formData),
       }).then(() => router.navigate("/admin/projects"));
     });
-  });
+  }, []);
   const upLoadFiles = async (files) => {
     if (files) {
       const CLOUD_NAME = "dc9iifdjv";
@@ -56,20 +57,33 @@ const ProjectAdd = () => {
     }
   };
   return `<div class="container" style="height:400px">
-        <form id="form-add">
-        <div class="form-group mb-3">
-        <lable>Tên danh mục Project</lable>
-        <input type="text" class="form-control" id="name" style="outline:auto;" />
-        </div>
-        <div class="form-group mb-3">
-        <lable>Thêm ảnh</lable>
-        <input type="file"  class="form-control" multiple id="image" style="outline:auto;" />
-        </div>
-           
-           
-            <button class="btn btn-primary" >Thêm</button>
-        </form>
-    </div>`;
+            <form id="form-add">
+            <div class="form-group mb-3">
+            <lable>Tên Project</lable>
+            <input type="text" class="form-control" id="name" style="outline:auto;" />
+            </div>
+            <div class="form-group mb-3">
+            <lable>Danh mục</lable>
+            <select name="" id="" class="form-group w-100">
+
+                <option value="">Danh mục</option>
+              
+               
+        </select>
+            </div>
+            <div class="form-group mb-3">
+            <lable>Mô tả</lable>
+            <input type="text" class="form-control" id="description" style="outline:auto;" />
+            </div>
+            <div class="form-group mb-3">
+            <lable>Thêm ảnh</lable>
+            <input type="file"  class="form-control" multiple id="image" style="outline:auto;" />
+            </div>
+               
+               
+                <button class="btn btn-primary" >Thêm</button>
+            </form>
+        </div>`;
 };
 
-export default ProjectAdd;
+export default addProjectCategory;

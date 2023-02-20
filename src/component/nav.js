@@ -43,7 +43,7 @@ const Nav = () => {
           <a class="nav-link" href="#testmonial">Testmonial</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#blog">Blog</a>
+          <a class="nav-link" href="#blog">Project</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>

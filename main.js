@@ -38,6 +38,10 @@ const app = document.querySelector("#app");
 // import AdminProjectEditPage from "@/editProjects";
 import ProjectAdd from "./src/pages/admin/projects/addProject";
 import ProjectEdit from "./src/pages/admin/projects/editProject";
+import projectDetail from "./src/pages/projectDetail";
+import err404 from "./src/pages/404";
+import projectCategory from "./src/pages/admin/categories/projectCategory";
+import addProjectCategory from "./src/pages/admin/categories/addProjectCategory";
 
 // app.innerHTML = homePage();
 // render(homePage, app);
@@ -60,25 +64,31 @@ router.on("/", () => {
 // router.on("/post-detail", () => {
 //   render(postDetail, app);
 // });
-// router.on("/project", () => {
-//   render(projectsPage, app);
-// });
+router.on("/projects/:id", ({ data }) =>
+  render(() => projectDetail(data), app)
+);
 // router.on("/project/:id", (params) => {
 //   render(projectDetail(params.data.id), app);
 // });
 router.on("/admin/projects", () => {
   render(adminProjects, app);
 });
+
 router.on("/admin", () => {
   render(categoryAdmin, app);
 });
 router.on("/admin/projects/add", () => {
   render(ProjectAdd, app);
 });
+router.on("/admin/projects/projectCategoryAdd", () => {
+  render(addProjectCategory, app);
+});
 router.on("/admin/projects/edit/:id", ({ data }) =>
   render(() => ProjectEdit(data), app)
 );
-router.notFound(() => {
-  console.log(1);
-});
+router.on("/admin/projects/projectCategory/:id", ({ data }) =>
+  render(() => projectCategory(data), app)
+);
+
+router.notFound(render(err404, app));
 router.resolve();

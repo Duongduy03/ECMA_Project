@@ -1,104 +1,77 @@
 import header from "../component/header";
-
+import { useEffect, useState } from "../lib";
 const projectsPage = () => {
+  const [category, setcategory] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/categories")
+      .then((respone) => respone.json())
+      .then((data) => {
+        // setProject(data);
+        setcategory(data);
+      });
+  }, []);
+
   return /* html*/ `
   
   <!-- Blog Section -->
-  <section id="blog" class="section">
-  <div class="container text-center">
-    <h6 class="subtitle">My Blogs</h6>
-    <h6 class="section-title mb-4">Latest News</h6>
-    <p class="mb-5 pb-4">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. In alias
-      dignissimos. <br />
-      rerum commodi corrupti, temporibus non quam.
-    </p>
 
-    <div class="row text-left">
-      <div class="col-md-4">
-        <div class="card border mb-4">
-          <img
-            src="assets/imgs/blog-1.jpg"
-            alt=""
-            class="card-img-top w-100"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Designe for Everyone</h5>
-            <div class="post-details">
-              <a href="javascript:void(0)">Posted By: Admin</a>
-              <a href="javascript:void(0)"
-                ><i class="ti-thumb-up"></i> 456</a
-              >
-              <a href="javascript:void(0)"
-                ><i class="ti-comment"></i> 123</a
-              >
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
-              ad vel dolorum, iusto velit, minima? Voluptas nemo harum
-              impedit nisi.
-            </p>
-            <a href="javascript:void(0)">Read More..</a>
-          </div>
+   
+<section id="blog" class="section">
+<div class="container text-center">
+  <h6 class="subtitle">My Projects</h6>
+  <h6 class="section-title mb-4">Latest News</h6>
+  <p class="mb-5 pb-4">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. In alias
+    dignissimos. <br />
+    rerum commodi corrupti, temporibus non quam.
+  </p>
+
+  <div class="row text-left">
+  ${category
+    .map((category) => {
+      return `
+    <div class="col-md-4">
+   
+    <div class="card border mb-4">
+      <img
+        src="${category.image}"
+        alt=""
+        class="card-img-top w-100 "
+        style="height:200px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">${category.name}</h5>
+        <div class="post-details">
+          <a href="javascript:void(0)">Posted By: Admin</a>
+          <a href="javascript:void(0)"
+            ><i class="ti-thumb-up"></i> 456</a
+          >
+          <a href="javascript:void(0)"
+            ><i class="ti-comment"></i> 123</a
+          >
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card border mb-4">
-          <img
-            src="assets/imgs/blog-2.jpg"
-            alt=""
-            class="card-img-top w-100"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Web Layouts</h5>
-            <div class="post-details">
-              <a href="javascript:void(0)">Posted By: Admin</a>
-              <a href="javascript:void(0)"
-                ><i class="ti-thumb-up"></i> 456</a
-              >
-              <a href="javascript:void(0)"
-                ><i class="ti-comment"></i> 123</a
-              >
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
-              ad vel dolorum, iusto velit, minima? Voluptas nemo harum
-              impedit nisi.
-            </p>
-            <a href="javascript:void(0)">Read More..</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card border mb-4">
-          <img
-            src="assets/imgs/blog-3.jpg"
-            alt=""
-            class="card-img-top w-100"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Bootstrap Framework</h5>
-            <div class="post-details">
-              <a href="javascript:void(0)">Posted By: Admin</a>
-              <a href="javascript:void(0)"
-                ><i class="ti-thumb-up"></i> 456</a
-              >
-              <a href="javascript:void(0)"
-                ><i class="ti-comment"></i> 123</a
-              >
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
-              ad vel dolorum, iusto velit, minima? Voluptas nemo harum
-              impedit nisi.
-            </p>
-            <a href="javascript:void(0)">Read More..</a>
-          </div>
-        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
+          ad vel dolorum, iusto velit, minima? Voluptas nemo harum
+          impedit nisi.
+        </p>
+        <button data-id=${category.id} class="btn">
+        <a href="/projects/${category.id}">Read More..</a>
+        </button>
+        
       </div>
     </div>
   </div>
+    `;
+    })
+    .join("")}
+   
+
+   
+  </div>
+</div>
 </section>
+
 
 <!-- Hire me section -->
 <section class="bg-gray p-0 section">

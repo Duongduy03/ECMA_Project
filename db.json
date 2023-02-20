@@ -1,15 +1,48 @@
 {
   "projects": [
     {
-      "name": "phòng hiệu trưởng ",
-      "description": "",
+      "name": "Project portfolio0",
       "id": 1
+    },
+    {
+      "name": "Assignment final HTML5 CSS3",
+      "description": "Đây là một dự án mà em đã làm",
+      "img": "assets/imgs/HTML5-CSS3.jpg",
+      "id": 2,
+      "categoryId": 1,
+      "aboutId": 1
+    },
+    {
+      "name": "Project JavaScript Nâng Cao",
+      "description": "Đây là một dự án mà em đã làm",
+      "img": "assets/imgs/HTML5-CSS3.jpg",
+      "id": 4,
+      "categoryId": 1,
+      "aboutId": 1
+    },
+    {
+      "name": "Admin",
+      "description": "s",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676933873/ECMA/jhprooi4hlqcessi9oga.jpg"
+      ],
+      "id": 5
     }
   ],
   "categories": [
     {
-      "id": 1,
-      "name": "HTML5 CSS3"
+      "name": "HTML5 CSS3",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676935085/ECMA/cjhwytu2qzctssinwd2w.jpg"
+      ],
+      "id": 1
+    },
+    {
+      "name": "JavaScript",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676935332/ECMA/o6bukuflenuvx4axwctg.jpg"
+      ],
+      "id": 2
     }
   ],
   "about": [
@@ -17,11 +50,11 @@
       "id": 1,
       "name": "Duong Van Duy",
       "phone": "0342782299",
-      "avatar": "",
+      "avatar": "assets/imgs/anh_duy.jpg",
       "email": "duydvph28215@fpt.edu.vn",
       "address": "110 ngõ 80 Xuân Phương Nam Từ Liêm Hà Nội",
       "facebook": "https://www.facebook.com/profile.php?id=100031847233965&mibextid=LQQJ4d",
-      "github": "https://github.com/Duongduy03/Project-ECMA",
+      "github": "https://github.com/Duongduy03/ECMA_Project",
       "job": "Web developer",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, eius, nam. Quo praesentium qui temporibus voluptatum, facilis aliquid eligendi fugiat beatae neque inventore non. Laborumrepellendus consequatur ullam voluptatum asperiores."
     }
