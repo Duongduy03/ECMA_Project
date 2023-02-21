@@ -39,7 +39,7 @@ const headerAdmin = () => {
                 </a>
               </li>
               <li class="header__nav--function--item">
-                <a href="" class="header__nav--function--link">
+                <a href="/" class="header__nav--function--link">
                   <i class="fa-solid fa-globe"></i>
                   Vào website
                 </a>

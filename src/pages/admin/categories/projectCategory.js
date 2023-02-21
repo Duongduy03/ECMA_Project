@@ -28,7 +28,7 @@ const projectCategory = ({ id }) => {
   //   console.log(arr);
   return `
   ${headerAdmin()}
-  <div class="container" style="height:85vh">
+  <div class="container" style="height:100%">
   ${arr
     .map((pro) => {
       return `
@@ -59,6 +59,7 @@ const projectCategory = ({ id }) => {
           <td>${project.name}</td>
           <td>${project.description}</td>
           <td>
+
           <img src="/${project.img}" alt="" style="width:100%">
           </td>
          

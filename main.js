@@ -42,6 +42,8 @@ import projectDetail from "./src/pages/projectDetail";
 import err404 from "./src/pages/404";
 import projectCategory from "./src/pages/admin/categories/projectCategory";
 import addProjectCategory from "./src/pages/admin/categories/addProjectCategory";
+import about from "./src/pages/admin/about/about";
+import editAbout from "./src/pages/admin/about/editAbout";
 
 // app.innerHTML = homePage();
 // render(homePage, app);
@@ -77,6 +79,9 @@ router.on("/admin/projects", () => {
 router.on("/admin", () => {
   render(categoryAdmin, app);
 });
+router.on("/admin/about", () => {
+  render(about, app);
+});
 router.on("/admin/projects/add", () => {
   render(ProjectAdd, app);
 });
@@ -85,6 +90,9 @@ router.on("/admin/projects/projectCategoryAdd", () => {
 });
 router.on("/admin/projects/edit/:id", ({ data }) =>
   render(() => ProjectEdit(data), app)
+);
+router.on("/admin/about/edit/:id", ({ data }) =>
+  render(() => editAbout(data), app)
 );
 router.on("/admin/projects/projectCategory/:id", ({ data }) =>
   render(() => projectCategory(data), app)

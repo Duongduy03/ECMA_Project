@@ -7,7 +7,7 @@ const projectAdmin = () => {
         </div>
         <div class="function__menu">
           <div class="function__item">
-            <a href="#" class="function__item--link">
+            <a href="/" class="function__item--link">
               <div class="function__img--box">
                 <img class="function__box" src="./assets/imgs/planet-earth.png" alt="">
               </div>
@@ -20,6 +20,18 @@ const projectAdmin = () => {
                 <img class="function__box" src="./assets/imgs/projects-removebg-preview.png" alt="">
               </div>
               <p class="function__label">Quản lý dự án</p>
+            </a>
+        
+        
+         
+         
+        </div>
+          <div class="function__item">
+            <a href="/admin/about" class="function__item--link">
+              <div class="function__img--box">
+                <img class="function__box" src="./assets/imgs/admin.png" alt="">
+              </div>
+              <p class="function__label">Thông tin cá nhân</p>
             </a>
         
         

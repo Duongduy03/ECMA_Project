@@ -6,7 +6,7 @@
     },
     {
       "name": "Assignment final HTML5 CSS3",
-      "description": "Đây là một dự án mà em đã làm",
+      "description": "JavaScript là ngôn ngữ lập trình được nhà phát triển sử dụng để tạo trang web tương tác. Từ làm mới bảng tin trên trang mạng xã hội đến hiển thị hình ảnh động và bản đồ tương tác, các chức năng của JavaScript có thể cải thiện trải nghiệm người dùng của trang web. Là ngôn ngữ kịch bản phía máy khách, JavaScript là một trong những công nghệ cốt lõi của World Wide Web. Ví dụ: khi duyệt internet, bất cứ khi nào bạn thấy quảng cáo quay vòng dạng hình ảnh, menu thả xuống nhấp để hiển thị hoặc màu sắc phần tử thay đổi động trên trang web cũng chính là lúc bạn thấy các hiệu ứng của JavaScript.",
       "img": "assets/imgs/HTML5-CSS3.jpg",
       "id": 2,
       "categoryId": 1,
@@ -43,20 +43,43 @@
         "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676935332/ECMA/o6bukuflenuvx4axwctg.jpg"
       ],
       "id": 2
+    },
+    {
+      "name": "PHP 1",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676947706/ECMA/uu8cvombfbyfsnzet5r3.jpg"
+      ],
+      "id": 3
+    },
+    {
+      "name": "PHP 2",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948103/ECMA/b3dh0vtibnykw07ijbt2.jpg"
+      ],
+      "id": 4
+    },
+    {
+      "name": "Admin",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948862/ECMA/ngqsylmmonqrz6jmnkrh.jpg",
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948863/ECMA/ph0xwkr1aqnr2il0hqfl.jpg",
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948864/ECMA/sqx0dpsxlxcclfwrcqc5.jpg"
+      ],
+      "id": 5
     }
   ],
   "about": [
     {
-      "id": 1,
       "name": "Duong Van Duy",
       "phone": "0342782299",
-      "avatar": "assets/imgs/anh_duy.jpg",
       "email": "duydvph28215@fpt.edu.vn",
       "address": "110 ngõ 80 Xuân Phương Nam Từ Liêm Hà Nội",
-      "facebook": "https://www.facebook.com/profile.php?id=100031847233965&mibextid=LQQJ4d",
-      "github": "https://github.com/Duongduy03/ECMA_Project",
       "job": "Web developer",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, eius, nam. Quo praesentium qui temporibus voluptatum, facilis aliquid eligendi fugiat beatae neque inventore non. Laborumrepellendus consequatur ullam voluptatum asperiores."
+      "description": "Duy đẹp trai",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676953246/ECMA/t8qgs6tpmsckqhi3xb2z.jpg"
+      ],
+      "id": 1
     }
   ]
 }

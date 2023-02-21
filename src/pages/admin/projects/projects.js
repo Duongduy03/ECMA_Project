@@ -38,7 +38,7 @@ const adminProjects = () => {
   //  B2
   return `
   ${headerAdmin()}
-    <div class="container" style="height:77.5vh">
+    <div class="container" style="height:auto">
     <h1>Quản lý danh mục dự án</h1>
     <table class="table table-bordered">
     <thead>
@@ -59,18 +59,31 @@ const adminProjects = () => {
             <tr>
             <td>${project.id}</td>
             <td>
-            <a href="/admin/projects/projectCategory/${project.id}">  ${project.name}</a>
+            <a href="/admin/projects/projectCategory/${project.id}">  ${
+            project.name
+          }</a>
           
             </td>
-            <td>
-              <img src="${project.image}" style="width:200px">
+            <td style="display:flex;">
+        ${project.image
+          .map((img) => {
+            return `
+          <img src="${img}" style="width:200px;margin: 5px">
           
+          `;
+          })
+          .join("")}
+             
             </td>
            
             <td>
-                <button data-id="${project.id}" class="btn btn-remove btn-danger"> Remove</button>
+                <button data-id="${
+                  project.id
+                }" class="btn btn-remove btn-danger"> Remove</button>
                 <button data-id="${project.id}" class="btn btn-edit btn-danger">
-                <a href="/admin/projects/edit/${project.id}" style="color:white">Sửa
+                <a href="/admin/projects/edit/${
+                  project.id
+                }" style="color:white">Sửa
                 </a>
                   </button>
                  </button>

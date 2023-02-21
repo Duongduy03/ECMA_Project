@@ -58,21 +58,21 @@ const contactPage = () => {
          <i class="ti-location-pin"></i>
          <div class="">
            <h5>Location</h5>
-           <p>12345 Fake ST NoWhere AB Country</p>
+           <p>110 ngõ 80 Xuân Phương Nam Từ Liêm</p>
          </div>
        </div>
        <div class="item">
          <i class="ti-mobile"></i>
          <div>
            <h5>Phone Number</h5>
-           <p>(123) 456-7890</p>
+           <p>0342782299</p>
          </div>
        </div>
        <div class="item">
          <i class="ti-email"></i>
          <div class="mb-0">
            <h5>Email Address</h5>
-           <p>info@website.com</p>
+           <p>duydvph28215@fpt.edu.vn</p>
          </div>
        </div>
      </div>
