@@ -2,31 +2,31 @@
   "projects": [
     {
       "name": "Project portfolio0",
-      "id": 1
+      "id": 1,
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676933873/ECMA/jhprooi4hlqcessi9oga.jpg"
+      ],
+      "description": "JavaScript là ngôn ngữ lập trình được nhà phát triển sử dụng để tạo trang web tương tác. Từ làm mới bảng tin trên trang mạng xã hội đến hiển thị hình ảnh động và bản đồ tương tác, các chức năng của JavaScript có thể cải thiện trải nghiệm người dùng của trang web. Là ngôn ngữ kịch bản phía máy khách, JavaScript là một trong những công nghệ cốt lõi của World Wide Web. Ví dụ: khi duyệt internet, bất cứ khi nào bạn thấy quảng cáo quay vòng dạng hình ảnh, menu thả xuống nhấp để hiển thị hoặc màu sắc phần tử thay đổi động trên trang web cũng chính là lúc bạn thấy các hiệu ứng của JavaScript.",
+      "categoryId": 1
     },
     {
       "name": "Assignment final HTML5 CSS3",
       "description": "JavaScript là ngôn ngữ lập trình được nhà phát triển sử dụng để tạo trang web tương tác. Từ làm mới bảng tin trên trang mạng xã hội đến hiển thị hình ảnh động và bản đồ tương tác, các chức năng của JavaScript có thể cải thiện trải nghiệm người dùng của trang web. Là ngôn ngữ kịch bản phía máy khách, JavaScript là một trong những công nghệ cốt lõi của World Wide Web. Ví dụ: khi duyệt internet, bất cứ khi nào bạn thấy quảng cáo quay vòng dạng hình ảnh, menu thả xuống nhấp để hiển thị hoặc màu sắc phần tử thay đổi động trên trang web cũng chính là lúc bạn thấy các hiệu ứng của JavaScript.",
-      "img": "assets/imgs/HTML5-CSS3.jpg",
+      "image": [
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676933873/ECMA/jhprooi4hlqcessi9oga.jpg"
+      ],
       "id": 2,
       "categoryId": 1,
       "aboutId": 1
     },
     {
-      "name": "Project JavaScript Nâng Cao",
-      "description": "Đây là một dự án mà em đã làm",
-      "img": "assets/imgs/HTML5-CSS3.jpg",
-      "id": 4,
-      "categoryId": 1,
-      "aboutId": 1
-    },
-    {
-      "name": "Admin",
-      "description": "s",
+      "name": "phòng hiệu trưởng",
+      "aboutId": "1",
+      "categoryId": "3",
       "image": [
-        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676933873/ECMA/jhprooi4hlqcessi9oga.jpg"
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1677089930/ECMA/qaurviy1onlhqyimznk9.png"
       ],
-      "id": 5
+      "id": 3
     }
   ],
   "categories": [
@@ -57,15 +57,6 @@
         "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948103/ECMA/b3dh0vtibnykw07ijbt2.jpg"
       ],
       "id": 4
-    },
-    {
-      "name": "Admin",
-      "image": [
-        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948862/ECMA/ngqsylmmonqrz6jmnkrh.jpg",
-        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948863/ECMA/ph0xwkr1aqnr2il0hqfl.jpg",
-        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676948864/ECMA/sqx0dpsxlxcclfwrcqc5.jpg"
-      ],
-      "id": 5
     }
   ],
   "about": [
@@ -75,9 +66,11 @@
       "email": "duydvph28215@fpt.edu.vn",
       "address": "110 ngõ 80 Xuân Phương Nam Từ Liêm Hà Nội",
       "job": "Web developer",
-      "description": "Duy đẹp trai",
+      "description": "JavaScript là ngôn ngữ lập trình được nhà phát triển sử dụng để tạo trang web tương tác. Từ làm mới bảng tin trên trang mạng xã hội đến hiển thị hình ảnh động và bản đồ tương tác, các chức năng của JavaScript có thể cải thiện trải nghiệm người dùng của trang web. Là ngôn ngữ kịch bản phía máy khách, JavaScript là một trong những công nghệ cốt lõi của World Wide Web. Ví dụ: khi duyệt internet, bất cứ khi nào bạn thấy quảng cáo quay vòng dạng hình ảnh, menu thả xuống nhấp để hiển thị hoặc màu sắc phần tử thay đổi động trên trang web cũng chính là lúc bạn thấy các hiệu ứng của JavaScript.",
+      "facebook": "https://www.facebook.com/profile.php?id=100031847233965&mibextid=LQQJ4d",
+      "github": "https://github.com/Duongduy03/ECMA_Project",
       "image": [
-        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1676953246/ECMA/t8qgs6tpmsckqhi3xb2z.jpg"
+        "https://res.cloudinary.com/dc9iifdjv/image/upload/v1677067823/ECMA/rnp5cdch6yu3dbn5e6yd.jpg"
       ],
       "id": 1
     }

@@ -81,7 +81,7 @@ const projectCategory = ({ id }) => {
   </tbody>
 </table>
 <button  class="btn btn-primary">
-<a href="/admin/projects/projectCategory/add" style="color:white">Thêm mới
+<a href="/admin/projects/projectCategory/${id}/add" style="color:white">Thêm mới
 </a>
   </button>
   </div>

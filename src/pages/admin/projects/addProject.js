@@ -1,19 +1,31 @@
 import { router, useEffect } from "@/lib";
 import axios from "axios";
+import { useState } from "../../../lib";
 // import { projects } from "../../data";
 const ProjectAdd = () => {
   // const projects = JSON.parse(localStorage.getItem("projects")) || [];
-
+  const [category, setCategory] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/categories")
+      .then((response) => response.json())
+      .then((data) => setCategory(data));
+  }, []);
   useEffect(() => {
     const form = document.querySelector("#form-add");
     const nameProject = document.querySelector("#name");
     const image = document.querySelector("#image");
+    const des = document.querySelectorAll("#description");
+    const admin = document.querySelector("#admin");
+    const category = document.querySelector("#category");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const urls = await upLoadFiles(image.files);
       // console.log(image.files);
       const formData = {
         name: nameProject.value,
+        description: des.value,
+        aboutId: admin.value,
+        categoryId: category.value,
         image: urls,
       };
       // projects.push({
@@ -22,7 +34,7 @@ const ProjectAdd = () => {
 
       // });
       // localStorage.setItem("projects", JSON.stringify(projects));
-      fetch(`http://localhost:3000/categories`, {
+      fetch(`http://localhost:3000/projects`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,10 +68,35 @@ const ProjectAdd = () => {
     }
   };
   return `<div class="container" style="height:400px">
+  <h1>Form thêm mới</h1>
         <form id="form-add">
         <div class="form-group mb-3">
-        <lable>Tên danh mục Project</lable>
+        <lable>Tên dự án</lable>
         <input type="text" class="form-control" id="name" style="outline:auto;" />
+        </div>
+        <div class="form-group mb-3">
+        <lable>Mô tả dự án</lable>
+        <input type="text" class="form-control" id="description" style="outline:auto;" />
+        </div>
+        <div class="form-group mb-3">
+        <lable>Người thực hiện</lable>
+        <input type="text" class="form-control" id="admin" style="outline:auto;" value="1" disabled />
+        </div>
+        <div class="form-group mb-3">
+        <lable>Danh mục dự án</lable>
+        <select name="" id="category" class="form-group w-100">
+           <option value="">Danh mục dự án</option>
+           ${category.map((category) => {
+             return `
+            <option value="${category.id}">${category.name}</option>
+            `;
+           })}
+         
+                
+              
+              
+               
+        </select>
         </div>
         <div class="form-group mb-3">
         <lable>Thêm ảnh</lable>

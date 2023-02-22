@@ -2,21 +2,40 @@ import { router, useEffect } from "@/lib";
 import axios from "axios";
 import { useState } from "../../../lib";
 
-const addProjectCategory = () => {
+const addProjectCategory = ({ id }) => {
+  const [category, setcategory] = useState({});
+  useEffect(() => {
+    fetch(`http://localhost:3000/categories/${id}`)
+      .then((response) => response.json())
+      .then((cate) => setcategory(cate));
+    // console.log(cate);
+  }, []);
+  // const cate = [category];
+  const categoryName = category.name;
+  // console.log(categoryName);
+  console.log(category);
   useEffect(() => {
     const form = document.querySelector("#form-add");
     const nameProject = document.querySelector("#name");
     const des = document.querySelector("#description");
     const image = document.querySelector("#image");
+    const admin = document.querySelector("#admin");
+    const category = document.querySelector("#category");
+    console.log(category);
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const urls = await upLoadFiles(image.files);
+
       // console.log(image.files);
       const formData = {
         name: nameProject.value,
         description: des.value,
+        aboutId: admin.value,
+        categoryId: category.value,
         image: urls,
       };
+
       // projects.push({
       //   id: projects.length + 1,
       //   name: nameProject.value,
@@ -29,7 +48,7 @@ const addProjectCategory = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      }).then(() => router.navigate("/admin/projects"));
+      }).then(() => router.navigate(`/admin/projects/projectCategory/${id}/`));
     });
   }, []);
   const upLoadFiles = async (files) => {
@@ -56,6 +75,7 @@ const addProjectCategory = () => {
       return urls;
     }
   };
+
   return `<div class="container" style="height:400px">
             <form id="form-add">
             <div class="form-group mb-3">
@@ -63,10 +83,17 @@ const addProjectCategory = () => {
             <input type="text" class="form-control" id="name" style="outline:auto;" />
             </div>
             <div class="form-group mb-3">
+            <lable>Người thực hiện</lable>
+            <input type="text" class="form-control" id="admin" style="outline:auto;" value="1" disabled/>
+            </div>
+            <div class="form-group mb-3">
             <lable>Danh mục</lable>
-            <select name="" id="" class="form-group w-100">
-
-                <option value="">Danh mục</option>
+            <select name="" id="category" class="form-group w-100">
+           <option value="${id}">
+            ${categoryName}
+           </option>
+                
+              
               
                
         </select>
@@ -79,9 +106,12 @@ const addProjectCategory = () => {
             <lable>Thêm ảnh</lable>
             <input type="file"  class="form-control" multiple id="image" style="outline:auto;" />
             </div>
+            <div class="form-group mb-3">
+            <button class="btn btn-primary">Thêm</button>
+            </div>
                
                
-                <button class="btn btn-primary" >Thêm</button>
+               
             </form>
         </div>`;
 };

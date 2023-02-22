@@ -85,11 +85,12 @@ router.on("/admin/about", () => {
 router.on("/admin/projects/add", () => {
   render(ProjectAdd, app);
 });
-router.on("/admin/projects/projectCategoryAdd", () => {
-  render(addProjectCategory, app);
-});
+
 router.on("/admin/projects/edit/:id", ({ data }) =>
   render(() => ProjectEdit(data), app)
+);
+router.on("/admin/projects/projectCategory/:id/add", ({ data }) =>
+  render(() => addProjectCategory(data), app)
 );
 router.on("/admin/about/edit/:id", ({ data }) =>
   render(() => editAbout(data), app)

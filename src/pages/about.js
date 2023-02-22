@@ -19,7 +19,7 @@ const aboutPage = () => {
       <div class="row text-center text-md-left">
         <div class="col-md-3">
           <img
-            src="${about.avatar}"
+            src="${about.image}"
             alt=""
             class="img-thumbnail mb-4"
           />

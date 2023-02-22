@@ -5,25 +5,42 @@ import axios from "axios";
 const ProjectEdit = ({ id }) => {
   // const projects = JSON.parse(localStorage.getItem("projects")) || [];
   // const currentProject = projects.find((project) => project.id == id);
-  const [project, setProject] = useState({});
+  const [project, setProject] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/categories/` + id)
+    fetch(`http://localhost:3000/projects/${id}?_expand=category`)
       .then((response) => response.json())
       .then((data) => setProject(data));
   }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/categories/`)
+      .then((response) => response.json())
+      .then((data) => setCategory(data));
+  }, []);
+  const newCategory = category.filter((category) => {
+    return category.id != project.categoryId;
+  });
+  // console.log(newCategory);
   useEffect(() => {
     const form = document.querySelector("#form-edit");
     const name = document.querySelector("#name");
     const image = document.querySelector("#image");
+    const des = document.querySelector("#description");
+    const admin = document.querySelectorAll("#admin");
+    const category = document.querySelectorAll("category");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const urls = await upLoadFiles(image.files);
       const newProject = {
         // id: currentProject.id,
         name: name.value,
+        description: des.value,
+        aboutId: admin.value,
+        categoryId: category.value,
         image: urls,
       };
-      fetch(`http://localhost:3000/categories/` + id, {
+      fetch(`http://localhost:3000/projects/` + id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -59,27 +76,54 @@ const ProjectEdit = ({ id }) => {
   };
   return `
   ${headerAdmin()}
-  <div class="container" style="height:85vh">
+  <div class="container" style="height:auto">
   <h1>Form sửa</h1>
         <form id="form-edit">
-        <div >
-        <lable></lable>
-          <input type="text" id="name" class="border" value="${project.name}" />
+        <div class="form-group mb-3">
+        <lable>Tên dự án</lable>
+        <input type="text" class="form-control" id="name" style="outline:auto;" value="${
+          project.name
+        }"/>
         </div>
-        <div >
-        <lable></lable>
-          <input type="file" id="image" class="border" value="${
-            project.image
-          }" />
-          <input type="text" hidden id="image" class="border" value="${
-            project.image
-          }" />
-          <img src="${project.image}" style="width:200px">
+        <div class="form-group mb-3">
+        <lable>Mô tả dự án</lable>
+        <input type="text" class="form-control" id="description" style="outline:auto;" value="${
+          project.description
+        }" />
         </div>
-        <div >
-        
-        <button class="btn btn-primary" style="color:white">Sửa</button>
+        <div class="form-group mb-3">
+        <lable>Người thực hiện</lable>
+        <input type="text" class="form-control" id="admin" style="outline:auto;" value="1" disabled />
         </div>
+        <div class="form-group mb-3">
+        <lable>Danh mục dự án</lable>
+        <select name="" id="category" class="form-group w-100">
+           <option value="${project.categoryId}">${
+    project.category?.name
+  }</option>
+           ${newCategory
+             .map((category) => {
+               return `
+            <option value="${category.id}">${category.name}</option>
+            `;
+             })
+             .join("")}
+          
+          
+                
+              
+              
+               
+        </select>
+        </div>
+        <div class="form-group mb-3">
+        <lable>Thêm ảnh</lable>
+        <input type="file"  class="form-control" multiple id="image" style="outline:auto;" />
+        <img src="${project.img}" atl="" style="width:100px">
+        </div>
+           
+           
+            <button class="btn btn-primary" >Sửa</button>
             
           
         </form>

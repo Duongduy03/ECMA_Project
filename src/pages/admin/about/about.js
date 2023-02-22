@@ -19,7 +19,7 @@ const about = () => {
      
             ${about.image.map((img) => {
               return `
-                <img src="${img}" alt="" style="width:200px">
+                <img src="${img}" alt="" style="width:400px;height:600px">
                 `;
             })}
           
@@ -33,6 +33,10 @@ const about = () => {
             <p>Địa chỉ: ${about.address}</p>
             
             <p>Công việc: ${about.job}</p>
+            <p>Link facebook:<a href=" ${about.facebook}"> ${
+        about.facebook
+      }</a></p>
+            <p>link github: <a href="${about.github}">${about.github}</a> </p>
             <p>Mô tả: ${about.description}</p>
             <button class="btn btn-primary">
             <a href="/admin/about/edit/${

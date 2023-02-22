@@ -10,7 +10,7 @@ const projectsPage = () => {
         setcategory(data);
       });
   }, []);
-
+  console.log(category);
   return /* html*/ `
   
   <!-- Blog Section -->
@@ -33,12 +33,14 @@ const projectsPage = () => {
     <div class="col-md-4">
    
     <div class="card border mb-4">
-      <img
-        src="${category.image}"
-        alt=""
-        class="card-img-top w-100 "
-        style="height:200px"
-      />
+    <img
+      src="${category.image[0]}"
+      alt=""
+      class="card-img-top w-100 "
+      style="height:200px"
+    />
+   
+     
       <div class="card-body">
         <h5 class="card-title">${category.name}</h5>
         <div class="post-details">

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "../../../lib";
 import { router, render } from "../../../lib";
 import axios from "axios";
+import headerAdmin from "../../../component/admin/headerAdmin";
+import footerAdmin from "../../../component/admin/footerAdmin";
 const editAbout = ({ id }) => {
   const [about, setAbout] = useState({});
   useEffect(() => {
@@ -17,6 +19,8 @@ const editAbout = ({ id }) => {
     const job = document.querySelector("#job");
     const image = document.querySelector("#image");
     const description = document.querySelector("#description");
+    const facebook = document.querySelector("#facebook");
+    const github = document.querySelector("#github");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const urls = await upLoadFiles(image.files);
@@ -28,6 +32,8 @@ const editAbout = ({ id }) => {
         address: address.value,
         job: job.value,
         description: description.value,
+        facebook: facebook.value,
+        github: github.value,
         image: urls,
       };
       fetch(`http://localhost:3000/about/` + id, {
@@ -66,6 +72,7 @@ const editAbout = ({ id }) => {
   };
 
   return `
+  ${headerAdmin()}
   <div class="container">
   <h1>Form chỉnh sửa thông tin</h1>
   <form id="form-edit">
@@ -83,7 +90,9 @@ const editAbout = ({ id }) => {
         </div>
         <div class="form-group mb-3">
         <lable>Địa chỉ</lable>
-          <input type="text" id="address" class="border" value="${about.address}" />
+          <input type="text" id="address" class="border" value="${
+            about.address
+          }" />
         </div>
         <div class="form-group mb-3">
         <lable>Công việc</lable>
@@ -91,13 +100,29 @@ const editAbout = ({ id }) => {
         </div>
         <div class="form-group mb-3">
         <lable>Mô tả</lable>
-          <input type="text" id="description" class="border" value="${about.description}" />
+          <input type="text" id="description" class="border" value="${
+            about.description
+          }" />
+        </div>
+        <div class="form-group mb-3">
+        <lable>Mô tả</lable>
+          <input type="text" id="facebook" class="border" value="${
+            about.facebook
+          }" disabled/>
+        </div>
+        <div class="form-group mb-3">
+        <lable>Mô tả</lable>
+          <input type="text" id="github" class="border" value="${
+            about.github
+          }" disabled/>
         </div>
         <div class="form-group mb-3" >
         <lable>Ảnh</lable>
-          <input type="file" id="image" class="border" value="/${about.avatar}" />
-          <input type="text" hidden id="image" class="border" value="/${about.avatar}" />
-          <img src="/${about.avatar}" style="width:200px">
+          <input type="file" id="image" class="border" value="${about.image}" />
+          <input type="text" hidden id="image" class="border" value="${
+            about.image
+          }" />
+          <img src="${about.image}" style="width:200px">
         </div>
         <div >
         
@@ -108,7 +133,7 @@ const editAbout = ({ id }) => {
         </form>
   
   </div>
-   
+   ${footerAdmin()}
   `;
 };
 
